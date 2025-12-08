@@ -96,7 +96,25 @@ Predicted Weeks on Chart: 12.3 weeks
   Interpretation: Great staying power! 🎶
 ```
 
-### 3. Analyze Feature Importance
+### 3. Batch Prediction
+
+Predict popularity for multiple songs at once from a CSV file:
+
+```bash
+# Create an example input file to see the required format
+python predict_batch.py --example
+
+# Run batch predictions
+python predict_batch.py input_songs.csv output_predictions.csv
+```
+
+The input CSV should contain all audio feature columns. The output will include:
+- Original song data
+- `predicted_avg_rank` - Predicted chart ranking
+- `predicted_weeks_on_chart` - Predicted chart longevity
+- Interpretation columns for easy understanding
+
+### 4. Analyze Feature Importance
 
 Explore which features most influence popularity:
 
@@ -106,7 +124,7 @@ python feature_analysis_avgrank.py      # For chart rank analysis
 python feature_analysis_weeksonchart.py  # For longevity analysis
 ```
 
-### 4. Additional Scripts
+### 5. Additional Scripts
 
 - **Simple Linear Regression Analysis:**
   ```bash
@@ -116,6 +134,11 @@ python feature_analysis_weeksonchart.py  # For longevity analysis
 - **Calculate English Percentage in Lyrics:**
   ```bash
   python calculate_english_percentage.py
+  ```
+
+- **Run Tests:**
+  ```bash
+  python test_prediction_system.py
   ```
 
 ## Dataset Sources
@@ -161,9 +184,13 @@ kpop_popularity_prediction/
 │   └── feature_analysis_weeksonchart.py
 ├── models/                           # Trained models (generated)
 │   ├── avg_rank_model.pkl
-│   └── weeks_on_chart_model.pkl
+│   ├── weeks_on_chart_model.pkl
+│   ├── avg_rank_predictions.png
+│   └── weeks_on_chart_predictions.png
 ├── train_models.py                   # Model training script
-├── predict_popularity.py             # Prediction interface
+├── predict_popularity.py             # Interactive prediction interface
+├── predict_batch.py                  # Batch prediction from CSV
+├── test_prediction_system.py         # Test suite
 ├── simple_linear_regression_avgrank.py
 ├── calculate_english_percentage.py
 ├── requirements.txt                  # Python dependencies
