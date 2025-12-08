@@ -64,6 +64,7 @@ def get_feature_input(feature_name, feature_info):
                     continue
             elif feature_name == 'time_signature':
                 if not 3 <= value <= 7:
+                    # Warning only - unusual time signatures are allowed (e.g., 2/4 or 9/8)
                     print(f"  Warning: time_signature typically ranges from 3 to 7")
             
             return value

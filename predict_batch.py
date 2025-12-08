@@ -95,12 +95,12 @@ def predict_batch(input_file, output_file):
     # Make predictions
     print(f"\nMaking predictions for {len(X_clean)} songs...")
     
-    # Scale features and predict
-    X_scaled_rank = avg_rank_model['scaler'].transform(X_clean)
-    X_scaled_weeks = weeks_model['scaler'].transform(X_clean)
+    # Scale features once (both models use the same features and should use the same scaler)
+    X_scaled = avg_rank_model['scaler'].transform(X_clean)
     
-    avg_rank_predictions = avg_rank_model['model'].predict(X_scaled_rank)
-    weeks_predictions = weeks_model['model'].predict(X_scaled_weeks)
+    avg_rank_predictions = avg_rank_model['model'].predict(X_scaled)
+    weeks_predictions = weeks_model['model'].predict(X_scaled)
+
     
     # Create output dataframe
     output_df = df[valid_rows].copy()
