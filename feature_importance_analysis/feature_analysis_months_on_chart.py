@@ -19,7 +19,7 @@ feature_cols = [
     'duration_ms', 'time_signature', 'eng_line_ratio', 'eng_word_ratio',
     'company', 'gender' 
 ]
-target = 'avg_rank'
+target = 'months_on_chart'
 
 # Filter small companies
 threshold = 10 
@@ -68,8 +68,8 @@ plt.figure(figsize=(10, 8))
 plt.barh(top_20_features['Feature'], top_20_features['Importance'], color='skyblue')
 plt.xlabel('Importance')
 plt.ylabel('Feature')
-plt.title('Top 20 Feature Importance for avg_rank')
+plt.title('Top 20 Feature Importance for months_on_chart')
 plt.gca().invert_yaxis()
 plt.tight_layout()
-plt.savefig('feature_importance_avg_rank.png')
+plt.savefig('feature_importance_months_on_chart.png')
 plt.show()
