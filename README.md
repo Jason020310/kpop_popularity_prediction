@@ -1,11 +1,11 @@
 # KPOP Popularity Prediction
-Final project for 114-1 Introduction to Data Science.   
+Final project for NCU 114-1 Introduction to Data Science.   
 
 ## Abstract
 In recent years, KPOP has become a significant part of the global music industry. We aimed to investigate what factors contribute to a KPOP song's popularity. To this end, we used Spotify audio features along with company and gender information to predict whether a song would be a hit. We trained both regressors (to predict a song’s ranking) and classifiers (to predict whether a song is in the top 35) using four different models and compared their performance. Furthermore, we analyzed the hit rate of songs released by different companies, as the company feature was found to be more important than audio features in some models.
 
 
-## dataset sources
+## Dataset Sources
 (Spotify Web API will no longer be able to access Audio Feature since Nov 27, 2024, so we turned to the datasets on Kaggle.)
 * single_album_track_data.csv: https://www.kaggle.com/datasets/ericwan1/kpop-artists-and-full-spotify-discography
 * kpop_rankings.csv: https://www.kaggle.com/datasets/romainfonta2/kpop-song-rankings/data
@@ -65,10 +65,22 @@ In recent years, KPOP has become a significant part of the global music industry
     cd classifier
     python classifier.py
     ```
-    The images illustrating the performances are also stored in `/classifier` folder, including ROC curve and matrix confusion (they are shown in `classifier_comparison.png`)
+    The images illustrating the performances are also stored in `/classifier` folder, including ROC curve and confusion matrix (they are shown in `classifier_comparison.png`)
    
 ## How to Reproduce the Results
 1. Ensure the files are in the correct directory structure as Folder Structure Overview
 2. Follow the steps in "How to Install the Environment" to set up the environment.
 3. Run the program as described in "How to Run the Program."
 4. The results, including feature importance and model evaluation metrics, will be displayed in the terminal and saved as visualizations (e.g., `classifier_comparison.png`).
+
+## Results
+### Regressor
+The predictive performance of regressors:
+![images](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/regressor/Linear_Regression_actual_vs_pred.png)
+![images](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/regressor/XGBoost_actual_vs_pred.png)
+![images](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/regressor/Random_Forest_actual_vs_pred.png)
+![images](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/regressor/LightGBM_actual_vs_pred.png)
+
+### Classifier
+The ROC curve and confusion matrix of classifiers:
+![iamges](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/classifier/classifier_comparison.png)
