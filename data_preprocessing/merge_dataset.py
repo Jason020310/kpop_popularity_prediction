@@ -11,8 +11,8 @@ from spotipy.oauth2 import SpotifyClientCredentials
 
 # =================================parameters=================================
 # API Keys
-CLIENT_ID = "376a1acf3d214e52a70c56a3c648b66b"
-CLIENT_SECRET = "a99c371f5d1243e397ba2bf0c325cda3"
+CLIENT_ID = "MY_CLIENT_ID"
+CLIENT_SECRET = "MY_CLIENT_SECRET"
 BASE_PATH = "C:/KC/NCU/Intro_to_Data_Science/Kpop-lyric-datasets/melon/monthly-chart"
 
 # =================================functions=================================
