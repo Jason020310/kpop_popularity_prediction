@@ -10,7 +10,7 @@ from lightgbm import LGBMRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # 1. Load Data
-data_path = './dataset/dataset_with_feature/final_kpop_dataset.csv'
+data_path = '../dataset/dataset_with_feature/final_kpop_dataset.csv'
 print(f"Loading data from {data_path}...")
 try:
     data = pd.read_csv(data_path, encoding='utf-8')

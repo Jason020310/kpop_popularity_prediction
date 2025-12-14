@@ -14,7 +14,7 @@ import seaborn as sns
 import pandas as pd
 
 # 讀取 CSV
-df = pd.read_csv("dataset/combined_kpop_dataset.csv")  # 替換成你的路徑
+df = pd.read_csv("../dataset/combined_kpop_dataset.csv")  # 替換成你的路徑
 
 # target
 df['top35'] = (df['avg_rank'] <= 35).astype(int)
