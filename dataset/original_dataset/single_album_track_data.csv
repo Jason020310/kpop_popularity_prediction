@@ -1,4 +1,4 @@
-,Artist,Artist_Id,Single_Album_Name,Single_Album_Id,Track_Title,Track_Id,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,duration_ms,time_signature
+﻿,Artist,Artist_Id,Single_Album_Name,Single_Album_Id,Track_Title,Track_Id,danceability,energy,key,loudness,mode,speechiness,acousticness,instrumentalness,liveness,valence,tempo,duration_ms,time_signature
 0,SECHSKIES,6uRyNreOHUvWPNGnKfIo27,DON'T LOOK BACK,63fxv7o113Zji3oLeXgswm,DON’T LOOK BACK,3szqGZtiiS8hmIPcT9qBgh,0.535,0.484,0.0,-8.209,1.0,0.0301,0.678,2.18e-06,0.108,0.233,124.038,249263.0,4.0
 1,SECHSKIES,6uRyNreOHUvWPNGnKfIo27,ALL FOR YOU,7vqIRL00YfTtuO0sSAK3Uv,ALL FOR YOU,4jB0ikdBeXiIIP97TPXIPt,0.622,0.756,4.0,-4.838,0.0,0.0473,0.0705,0.0,0.108,0.718,167.902,242977.0,4.0
 2,SECHSKIES,6uRyNreOHUvWPNGnKfIo27,ALL FOR YOU,7vqIRL00YfTtuO0sSAK3Uv,DREAM,5d0AZT2CWAH4mApoiXlTDa,0.676,0.593,11.0,-5.368,1.0,0.0346,0.303,0.0,0.12,0.314,140.011,243714.0,4.0

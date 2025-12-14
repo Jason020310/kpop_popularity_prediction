@@ -10,10 +10,10 @@ from lightgbm import LGBMRegressor
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 # 1. Load Data
-data_path = './dataset/final_kpop_dataset_withEng.csv'
+data_path = './dataset/dataset_with_feature/final_kpop_dataset.csv'
 print(f"Loading data from {data_path}...")
 try:
-    data = pd.read_csv(data_path, encoding='latin1')
+    data = pd.read_csv(data_path, encoding='utf-8')
 except Exception as e:
     print(f"Error loading data: {e}")
     exit(1)
@@ -89,14 +89,40 @@ df_results = pd.DataFrame(results)
 # Reshape for seaborn
 df_melted = df_results.melt(id_vars="Model", var_name="Metric", value_name="Score")
 
-plt.figure(figsize=(12, 6))
-sns.barplot(x="Metric", y="Score", hue="Model", data=df_melted, palette="magma")
-plt.title("Model Performance Comparison (Lower MSE/MAE is better, Higher R2 is better)")
-plt.grid(axis='y', linestyle='--', alpha=0.7)
-plt.tight_layout()
-plt.savefig("model_comparison.png")
-print("\nSaved model_comparison.png")
+# Actual vs Predicted
+for name, model in models.items():
+    y_pred = model.predict(X_test)
+    
+    plt.figure(figsize=(6, 6))
+    plt.scatter(y_test, y_pred, alpha=0.6)
+    plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], 'r--', lw=2)  # y=x 參考線
+    plt.xlabel("Actual avg_rank")
+    plt.ylabel("Predicted avg_rank")
+    plt.title(f"Actual vs Predicted - {name}")
+    plt.grid(True, linestyle='--', alpha=0.7)
+    plt.tight_layout()
+    plt.savefig(f"{name.replace(' ', '_')}_actual_vs_pred.png")
+    plt.show()
 
-# Save detailed results to CSV
-df_results.to_csv("model_comparison_results.csv", index=False)
-print("Saved model_comparison_results.csv")
+
+# Feature Importance Visualization
+importances_models = ["Random Forest", "XGBoost", "LightGBM"]
+for name in importances_models:
+    model = models[name]
+    
+    # RandomForest / LightGBM / XGBoost 
+    if hasattr(model, "feature_importances_"):
+        importances = model.feature_importances_
+        feature_names = X.columns
+        
+        df_importance = pd.DataFrame({
+            "Feature": feature_names,
+            "Importance": importances
+        }).sort_values(by="Importance", ascending=False)
+        
+        plt.figure(figsize=(8, 6))
+        sns.barplot(x="Importance", y="Feature", data=df_importance, palette="viridis")
+        plt.title(f"Feature Importance - {name}")
+        plt.tight_layout()
+        plt.savefig(f"{name.replace(' ', '_')}_feature_importance.png")
+        plt.show()
