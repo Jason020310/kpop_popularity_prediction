@@ -75,6 +75,14 @@ In recent years, KPOP has become a significant part of the global music industry
 
 ## Results
 ### Regressor
+| Model             |   MSE     |  MAE    |   R2    |
+|------------------|-----------|:-------:|:-------:|
+| Linear Regression| 1471.9802 | 31.8449 | 0.0058  |
+| Random Forest    | 1479.6589 | 30.5514 | 0.0006  |
+| XGBoost          | 1599.0760 | 31.5336 | -0.0801 |
+| LightGBM         | 1561.3749 | 31.1130 | -0.0546 |
+
+
 The predictive performance of regressors:
 ![images](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/regressor/Linear_Regression_actual_vs_pred.png)
 ![images](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/regressor/XGBoost_actual_vs_pred.png)
@@ -82,5 +90,12 @@ The predictive performance of regressors:
 ![images](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/regressor/LightGBM_actual_vs_pred.png)
 
 ### Classifier
+| Model               | Accuracy | Precision | Recall | F1-score |
+|---------------------|:--------:|:---------:|:------:|:--------:|
+| Logistic Regression | 0.62     | 0.64      | 0.62   | 0.62     |
+| Random Forest       | 0.59     | 0.56      | 0.59   | 0.57     |
+| XGBoost             | 0.58     | 0.56      | 0.58   | 0.57     |
+| LightGBM            | 0.59     | 0.57      | 0.59   | 0.58     |'
+
 The ROC curve and confusion matrix of classifiers:
 ![iamges](https://github.com/Jason020310/kpop_popularity_prediction/blob/master/classifier/classifier_comparison.png)
