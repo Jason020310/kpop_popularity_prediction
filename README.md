@@ -10,6 +10,7 @@ In recent years, KPOP has become a significant part of the global music industry
 * single_album_track_data.csv: https://www.kaggle.com/datasets/ericwan1/kpop-artists-and-full-spotify-discography
 * kpop_rankings.csv: https://www.kaggle.com/datasets/romainfonta2/kpop-song-rankings/data
 * kpopgroups.csv: https://www.kaggle.com/datasets/nicolsalayoarias/kpop-groups-dataset/data
+* lyrics: https://github.com/EX3exp/Kpop-lyric-datasets
 
 ## Folder Structure Overview
 ```
